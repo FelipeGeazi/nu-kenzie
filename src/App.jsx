@@ -3,29 +3,37 @@ import { useState } from "react";
 import Form from "./components/Form";
 import List from "./components/List";
 import TotalMoney from "./components/TotalMoney";
+//import Card from "./components/Card";
 
 function App() {
   const [listTransactions, setListTransactions] = useState([]);
 
-  function filterEntradas() {
-    const entrada = listTransactions.filter((item) => {
-      return item.newType === "entrada";
-    });
+  const [listFiltradas, setListFiltradas] = useState([]);
 
-    List({ entrada });
+  function ListFilter(type) {
+    if (type === "todos") {
+      return setListFiltradas(listTransactions);
+    }
+    const filtrados = listTransactions.filter((item) => {
+      return item.newType === type;
+    });
+    return setListFiltradas(filtrados);
   }
+
   return (
     <>
       <header>
-        <img className="logo" src="../public/Nu_Kenzie.png" />
+        <img className="logo" src="./public/Nu_Kenzie.png" alt="logo" />
+
         <button className="btnInicio">Inicio</button>
       </header>
       <main>
         <aside>
           <Form
-            className="formulario"
             listTransactions={listTransactions}
             setListTransactions={setListTransactions}
+            listFiltradas={listFiltradas}
+            setListFiltradas={setListFiltradas}
           />
           <TotalMoney listTransactions={listTransactions} />
         </aside>
@@ -33,14 +41,21 @@ function App() {
           <nav>
             <h2 className="resumo">Resumo Financeiro</h2>
             <div className="buttons">
-              <button className="btnFilter">Todas</button>
-              <button onClick={() => filterEntradas} className="btnFilter">
+              <button className="btnFilter" onClick={() => ListFilter("todos")}>
+                Todas
+              </button>
+              <button
+                onClick={() => ListFilter("entrada")}
+                className="btnFilter"
+              >
                 Entradas
               </button>
-              <button className="btnFilter">Despesas</button>
+              <button className="btnFilter" onClick={() => ListFilter("saida")}>
+                Despesas
+              </button>
             </div>
           </nav>
-          <List listTransactions={listTransactions} />
+          <List listFiltradas={listFiltradas} />
         </section>
       </main>
     </>

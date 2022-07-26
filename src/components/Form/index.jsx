@@ -1,7 +1,12 @@
 import { useState } from "react";
 import "./style.css";
 
-function Form({ listTransactions, setListTransactions }) {
+function Form({
+  listTransactions,
+  setListTransactions,
+  setListFiltradas,
+  listFiltradas,
+}) {
   console.log(listTransactions);
 
   const [newValue, setNewValue] = useState(0);
@@ -16,6 +21,7 @@ function Form({ listTransactions, setListTransactions }) {
     };
     if (newDescription !== "" && newDescription !== " " && newValue !== 0) {
       setListTransactions([transation, ...listTransactions]);
+      setListFiltradas([transation, ...listFiltradas]);
     } else {
       alert("O valor ou a descrição não foi inseridos");
     }

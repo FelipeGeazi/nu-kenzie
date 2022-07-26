@@ -1,10 +1,11 @@
 import Card from "../Card";
+
 import "./style.css";
 
-function List({ listTransactions }) {
+function List({ listFiltradas }) {
   return (
     <ul>
-      {listTransactions.map((transaction, index) => (
+      {listFiltradas.map((transaction, index) => (
         <Card transaction={transaction} key={transaction.newDescription} />
       ))}
     </ul>

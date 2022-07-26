@@ -7,26 +7,28 @@
     /* grey-1 */
     background: #f8f9fa;
     border-radius: 8px;
-    height: 130px;
+    height: 8rem;
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
     margin-bottom: 1rem;
     border-left: 10px solid #03b898;
     padding: 0rem 2rem;
+    width: 100%;
 }
 
 .cardCinza {
     /* grey-1 */
     background: #f8f9fa;
     border-radius: 8px;
-    height: 130px;
+    height: 8rem;
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
     margin-bottom: 1rem;
     border-left: 10px solid #e9ecef;
     padding: 0rem 2rem;
+    width: 100%;
 }
 
 .divDescricao {
@@ -38,7 +40,6 @@
     font-style: normal;
     font-weight: 700;
     font-size: 1.5rem;
-    line-height: 30px;
     /* or 188% */
     /* grey-4 */
     color: #212529;
@@ -59,8 +60,7 @@
     font-family: "Nunito";
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 0.8rem;
     /* identical to box height, or 183% */
     /* grey-4 */
     color: #212529;

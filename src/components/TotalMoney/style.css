@@ -1,11 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Nunito:wght@300;400;600;700&display=swap");
+* {
+    box-sizing: border-box;
+}
+
 .divSoma {
     box-sizing: border-box;
     padding: 1rem 2rem;
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
-    width: 463px;
+    margin-bottom: 1rem;
+    width: 30rem;
     background: #ffffff;
     /* grey-2 */
     border: 1px solid #e9ecef;
@@ -33,7 +38,7 @@
     font-family: "Nunito";
     font-style: normal;
     font-weight: 700;
-    font-size: 1.3rem;
+    font-size: 1rem;
     line-height: 30px;
     /* identical to box height, or 188% */
     /* color-primary */
@@ -49,4 +54,11 @@
     /* identical to box height, or 183% */
     /* grey-3 */
     color: #343a40;
+}
+
+@media (max-width: 700px) {
+    .divSoma {
+        flex-direction: column;
+        width: 80vw;
+    }
 }
